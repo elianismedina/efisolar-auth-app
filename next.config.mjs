@@ -1,11 +1,20 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false,
+      };
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {
-        hostname: "avatars.githubusercontent.com",
+        protocol: "https",
+        hostname: "res.cloudinary.com",
       },
     ],
+    domains: ["avatars.githubusercontent.com"],
   },
 };
 
