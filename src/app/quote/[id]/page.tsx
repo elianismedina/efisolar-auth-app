@@ -33,8 +33,30 @@ export default async function Page({ params: { id } }: PageProps) {
   return (
     <div className="mx-3 my-10 flex flex-col items-center gap-3">
       <h1 className="text-center text-xl font-bold">
-        {quote?.email || `Quote ${id}`}
+        {quote?.userName || `Quote ${id}`}
       </h1>
+      <div className="flex flex-col-2 gap-4 border border-gray-200 p-4 rounded-md bg-slate-100">
+        <div className="font-bold">
+          <p>Email:</p>
+          <p>Location:</p>
+          <p>Phone Number:</p>
+          <p>Request Type:</p>
+          <p>Roof Type:</p>
+          <p>System Type:</p>
+          <p>Bill URL:</p>
+          <p>Additional Comments:</p>
+        </div>
+        <div>
+          <p>{quote?.email || `Quote ${id}`}</p>
+          <p>{quote?.location || `Quote ${id}`}</p>
+          <p>{quote?.phoneNumber || `Quote ${id}`}</p>
+          <p>{quote?.requestType || `Quote ${id}`}</p>
+          <p>{quote?.roofType || `Quote ${id}`}</p>
+          <p>{quote?.systemType || `Quote ${id}`}</p>
+          <p>{quote?.billUrl || `Quote ${id}`}</p>
+          <p>{quote?.additionalComments}</p>
+        </div>
+      </div>
     </div>
   );
 }

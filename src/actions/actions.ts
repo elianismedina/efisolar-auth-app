@@ -63,8 +63,8 @@ export async function createQuote(formData: FormData) {
       additionalComments: additionalComments,
     },
   });
-  revalidatePath("/quote");
-  redirect("/quote");
+  revalidatePath("/");
+  redirect("/");
 }
 interface UploadResult {
   url: string;

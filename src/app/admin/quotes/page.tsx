@@ -3,7 +3,13 @@ import { prisma } from "../../../lib/prisma";
 import Link from "next/link";
 
 const AllQuotesPage = async () => {
-  const quotes = await prisma.quote.findMany();
+  const quotes = await prisma.quote.findMany({
+    select: {
+      id: true,
+      email: true,
+      location: true,
+    },
+  });
   return (
     <div>
       <h1>All Quotes</h1>
@@ -11,10 +17,10 @@ const AllQuotesPage = async () => {
         {quotes.map((quote) => (
           <Link
             href={`/quote/${quote.id}`}
-            key={quote.id}
+            key={quote.email}
             className="hover:underline"
           >
-            <li key={quote.id}>{quote.userName}</li>
+            <li key={quote.email}>{quote.email}</li>
           </Link>
         ))}
       </ul>

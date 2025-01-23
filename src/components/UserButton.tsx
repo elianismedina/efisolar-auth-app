@@ -58,7 +58,7 @@ export default function UserButton({ user }: UserButtonProps) {
             onClick={() => signOut({ callbackUrl: "/" })}
             className="flex w-full items-center"
           >
-            <LogOut className="mr-2 h-4 w-4" /> Sign Out
+            <LogOut className="mr-2 h-4 w-4" /> Cerrar sesión
           </button>
         </DropdownMenuItem>
       </DropdownMenuContent>

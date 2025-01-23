@@ -13,7 +13,10 @@ export default function NavBar() {
     <header className="sticky top-0 bg-background px-3 shadow-sm">
       <nav className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between gap-3">
         <Link href="/" className="font-bold">
-          Next-Auth v5 Tutorial
+          Efisolar
+        </Link>
+        <Link href={`/quote/create`}>
+          <Button>Cotizar</Button>
         </Link>
         {user && <UserButton user={user} />}
         {!user && session.status !== "loading" && <SignInButton />}
@@ -23,5 +26,5 @@ export default function NavBar() {
 }
 
 function SignInButton() {
-  return <Button onClick={() => signIn()}>Sign in</Button>;
+  return <Button onClick={() => signIn()}>Iniciar sesión</Button>;
 }
