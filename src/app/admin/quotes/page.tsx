@@ -8,6 +8,12 @@ const AllQuotesPage = async () => {
       id: true,
       email: true,
       location: true,
+      phoneNumber: true,
+      requestType: true,
+      billUrl: true,
+      systemType: true,
+      roofType: true,
+      additionalComments: true,
     },
   });
   return (

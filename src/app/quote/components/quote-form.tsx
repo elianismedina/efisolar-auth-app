@@ -3,7 +3,6 @@
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -132,7 +131,7 @@ export default function QuoteForm() {
   return (
     <div className="max-w-2xl mx-auto my-4">
       <Form {...form}>
-        <form action={createQuote} className="space-y-2">
+        <form action={createQuote} className="space-y-2 p-4">
           {/*Add the name field*/}
           <FormField
             name="userName"
@@ -148,9 +147,6 @@ export default function QuoteForm() {
                     className="flex-1 block w-full px-3 py-2 text-gray-900 placeholder-gray-500 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </FormControl>
-                <FormDescription>
-                  This is a description for the name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -181,10 +177,6 @@ export default function QuoteForm() {
                     ))}
                   </SelectContent>
                 </Select>
-
-                <FormDescription>
-                  This is a description for the location.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -204,9 +196,6 @@ export default function QuoteForm() {
                     className="flex-1 block w-full px-3 py-2 text-gray-900 placeholder-gray-500 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </FormControl>
-                <FormDescription>
-                  This is a description for the email.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -226,9 +215,6 @@ export default function QuoteForm() {
                     className="flex-1 block w-full px-3 py-2 text-gray-900 placeholder-gray-500 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </FormControl>
-                <FormDescription>
-                  This is a description for the phone number.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -248,9 +234,6 @@ export default function QuoteForm() {
                     className="flex-1 block w-full px-3 py-2 text-gray-900 placeholder-gray-500 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </FormControl>
-                <FormDescription>
-                  ¿Cuánto pagas en promedio en tu factura de energía?
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -281,10 +264,6 @@ export default function QuoteForm() {
                     ))}
                   </SelectContent>
                 </Select>
-
-                <FormDescription>
-                  This is a description for the request type.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -315,10 +294,6 @@ export default function QuoteForm() {
                     ))}
                   </SelectContent>
                 </Select>
-
-                <FormDescription>
-                  This is a description for the roof type.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -349,10 +324,6 @@ export default function QuoteForm() {
                     ))}
                   </SelectContent>
                 </Select>
-
-                <FormDescription>
-                  This is a description for the system type.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -372,9 +343,6 @@ export default function QuoteForm() {
                     className="flex-1 block w-full px-3 py-2 text-gray-900 placeholder-gray-500 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </FormControl>
-                <FormDescription>
-                  This is a description for the bill image url.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -395,15 +363,13 @@ export default function QuoteForm() {
                     className="flex-1 block w-full px-3 py-2 text-gray-900 placeholder-gray-500 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </FormControl>
-                <FormDescription>
-                  This is a description for the additional comments.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
-
-          <SubmitButton type="submit">Enviar</SubmitButton>
+          <div className="flex justify-center">
+            <SubmitButton type="submit">Enviar</SubmitButton>
+          </div>
         </form>
       </Form>
     </div>
