@@ -31,7 +31,7 @@ export default async function Page({ params: { id } }: PageProps) {
   if (!quote) notFound();
 
   return (
-    <div className="mx-3 my-10 flex flex-col items-center gap-3">
+    <div className="mx-3 my-10 flex flex-col items-center gap-3 w-screen">
       <h1 className="text-center text-xl font-bold">
         {quote?.userName || `Quote ${id}`}
       </h1>
