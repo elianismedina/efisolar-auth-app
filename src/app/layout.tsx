@@ -1,5 +1,5 @@
 import NavBar from "../components/NavBar";
-import { Toaster } from "../components/ui/toaster";
+
 import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
 import { Inter } from "next/font/google";
@@ -26,7 +26,6 @@ export default function RootLayout({
         <SessionProvider>
           <NavBar />
           {children}
-          <Toaster />
         </SessionProvider>
       </body>
     </html>
