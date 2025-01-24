@@ -35,7 +35,7 @@ export default async function Page({ params: { id } }: PageProps) {
       <h1 className="text-center text-xl font-bold">
         {quote?.userName || `Quote ${id}`}
       </h1>
-      <div className="flex flex-col-2 gap-4 border border-gray-200 p-4 rounded-md bg-slate-100">
+      <div className="mx-auto flex flex-col-2 gap-4 border border-gray-200 p-4 rounded-md bg-slate-100">
         <div className="font-semibold text-gray-500 flex flex-col gap-2">
           <p>Email:</p>
           <p>Departamento:</p>
