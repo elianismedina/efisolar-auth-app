@@ -36,7 +36,7 @@ export default async function Page({ params: { id } }: PageProps) {
         {quote?.userName || `Quote ${id}`}
       </h1>
       <div className="flex flex-col-2 gap-4 border border-gray-200 p-4 rounded-md bg-slate-100">
-        <div className="font-semibold text-sm text-gray-500">
+        <div className="font-semibold text-gray-500">
           <p>Email:</p>
           <p>Departamento:</p>
           <p>Teléfono:</p>
@@ -46,7 +46,7 @@ export default async function Page({ params: { id } }: PageProps) {
           <p>Imagen factura:</p>
           <p>Comentarios:</p>
         </div>
-        <div className="flex flex-col gap-4 text-gray-700">
+        <div className="flex flex-col gap-4 text-gray-500">
           <p>{quote?.email || `Quote ${id}`}</p>
           <p>{quote?.location || `Quote ${id}`}</p>
           <p>{quote?.phoneNumber || `Quote ${id}`}</p>
