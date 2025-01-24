@@ -46,7 +46,7 @@ export default async function Page({ params: { id } }: PageProps) {
           <p>Bill URL:</p>
           <p>Additional Comments:</p>
         </div>
-        <div>
+        <div className="flex flex-col gap-2 text-gray-700">
           <p>{quote?.email || `Quote ${id}`}</p>
           <p>{quote?.location || `Quote ${id}`}</p>
           <p>{quote?.phoneNumber || `Quote ${id}`}</p>
