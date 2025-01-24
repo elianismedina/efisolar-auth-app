@@ -53,7 +53,7 @@ export default async function Page({ params: { id } }: PageProps) {
           <p>{quote?.requestType || `Quote ${id}`}</p>
           <p>{quote?.roofType || `Quote ${id}`}</p>
           <p>{quote?.systemType || `Quote ${id}`}</p>
-          <p>{quote?.billUrl || `Quote ${id}`}</p>
+          <p className="text-wrap">{quote?.billUrl || `Quote ${id}`}</p>
           <p>{quote?.additionalComments}</p>
         </div>
       </div>
