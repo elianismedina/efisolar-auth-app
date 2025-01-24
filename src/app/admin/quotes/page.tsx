@@ -1,33 +1,26 @@
-import React from "react";
 import { prisma } from "../../../lib/prisma";
 import Link from "next/link";
 
+export const revalidate = 0;
 const AllQuotesPage = async () => {
+  // Fetch quotes directly in the server component
   const quotes = await prisma.quote.findMany({
     select: {
       id: true,
-      email: true,
-      location: true,
-      phoneNumber: true,
-      requestType: true,
-      billUrl: true,
-      systemType: true,
-      roofType: true,
-      additionalComments: true,
+    },
+    orderBy: {
+      id: "desc",
     },
   });
+
   return (
     <div>
-      <h1>All Quotes</h1>
-      <ul>
+      <h1 className="text-center mt-4">All Quotes</h1>
+      <ul className="mt-4 flex flex-col items-center">
         {quotes.map((quote) => (
-          <Link
-            href={`/quote/${quote.id}`}
-            key={quote.email}
-            className="hover:underline"
-          >
-            <li key={quote.email}>{quote.email}</li>
-          </Link>
+          <li key={quote.id} className="hover:underline">
+            <Link href={`/quote/${quote.id}`}>{quote.id}</Link>
+          </li>
         ))}
       </ul>
     </div>

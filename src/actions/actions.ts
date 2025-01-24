@@ -24,7 +24,7 @@ const FormSchema = z.object({
 
 export async function createQuote(formData: FormData) {
   const file = formData.get("billUrl") as File;
-  const url = await uploadBill(file);
+  const url = await uploadBill(file || undefined);
 
   const {
     userName,
@@ -46,7 +46,7 @@ export async function createQuote(formData: FormData) {
     roofType: formData.get("roofType") as string,
     requestType: formData.get("requestType") as string,
     systemType: formData.get("systemType") as string,
-    billUrl: url,
+    billUrl: url?.toString(),
     additionalComments: formData.get("additionalComments") as string,
   });
   await prisma.quote.create({
@@ -69,30 +69,39 @@ export async function createQuote(formData: FormData) {
 interface UploadResult {
   url: string;
 }
-async function uploadBill(file: File) {
-  const arrayBuffer = await file.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
+async function uploadBill(file?: File): Promise<string | null> {
+  if (!file || file.size === 0) {
+    console.warn("No file provided or file is empty.");
+    return null;
+  }
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
 
-  const result = await new Promise<UploadResult>((resolve, reject) => {
-    cloudinary.uploader
-      .upload_stream(
-        {
-          upload_preset: env.NEXT_PUBLIC_UPLOAD_PRESET,
-          api_key: env.CLOUDINARY_API_KEY,
-          api_secret: env.CLOUDINARY_API_SECRET,
-          cloud_name: env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-        },
-        function (error, result) {
-          if (error || result === undefined) {
-            reject(error || new Error("Upload result is undefined."));
-            return;
+    const result = await new Promise<UploadResult>((resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream(
+          {
+            upload_preset: env.NEXT_PUBLIC_UPLOAD_PRESET,
+            api_key: env.CLOUDINARY_API_KEY,
+            api_secret: env.CLOUDINARY_API_SECRET,
+            cloud_name: env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+          },
+          function (error, result) {
+            if (error || result === undefined) {
+              reject(error || new Error("Upload result is undefined."));
+              return;
+            }
+            resolve(result);
           }
-          resolve(result);
-        }
-      )
-      .end(buffer);
-  });
-  return result.url;
+        )
+        .end(buffer);
+    });
+    return result.url;
+  } catch (error) {
+    console.error("Error uploading image", error);
+    throw error;
+  }
 }
 
 export const login = async () => {
