@@ -40,10 +40,10 @@ export default async function Page({ params: { id } }: PageProps) {
           <p>Email:</p>
           <p>Departamento:</p>
           <p>Teléfono:</p>
-          <p>Tipo de solicitud:</p>
-          <p>Tipo de techo:</p>
-          <p>Tipo de conexión:</p>
-          <p>Imagen factura:</p>
+          <p>Tipo_solicitud:</p>
+          <p>Tipo_techo:</p>
+          <p>Tipo_conexión:</p>
+          <p>Imagen_factura:</p>
           <p>Comentarios:</p>
         </div>
         <div className="flex flex-col gap-2 text-gray-500">
