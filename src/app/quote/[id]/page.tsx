@@ -36,17 +36,17 @@ export default async function Page({ params: { id } }: PageProps) {
         {quote?.userName || `Quote ${id}`}
       </h1>
       <div className="flex flex-col-2 gap-4 border border-gray-200 p-4 rounded-md bg-slate-100">
-        <div className="font-bold">
+        <div className="font-semibold text-sm text-gray-500">
           <p>Email:</p>
-          <p>Location:</p>
-          <p>Phone Number:</p>
-          <p>Request Type:</p>
-          <p>Roof Type:</p>
-          <p>System Type:</p>
-          <p>Bill URL:</p>
-          <p>Additional Comments:</p>
+          <p>Departamento:</p>
+          <p>Teléfono:</p>
+          <p>Tipo de solicitud:</p>
+          <p>Tipo de techo:</p>
+          <p>Tipo de conexión:</p>
+          <p>Imagen factura:</p>
+          <p>Comentarios:</p>
         </div>
-        <div className="flex flex-col gap-2 text-gray-700">
+        <div className="flex flex-col gap-4 text-gray-700">
           <p>{quote?.email || `Quote ${id}`}</p>
           <p>{quote?.location || `Quote ${id}`}</p>
           <p>{quote?.phoneNumber || `Quote ${id}`}</p>
