@@ -11,7 +11,7 @@ export default function MainNav() {
 
   return (
     <div className="hidden md:flex">
-      <nav className="flex items-center justify-between w-full">
+      <nav className="flex flex-row gap-4 items-center justify-between w-full">
         <Link href="/" className="font-bold">
           Efisolar
         </Link>
