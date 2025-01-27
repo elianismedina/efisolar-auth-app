@@ -13,6 +13,7 @@ import { signIn, useSession } from "next-auth/react";
 import UserButton from "./UserButton";
 
 import React from "react";
+import Image from "next/image";
 
 const navbarLinks = [
   {
@@ -38,9 +39,17 @@ export default function MobileNav() {
         </SheetTrigger>
         <SheetContent side="left">
           <NavBar withSheetClose />
-          <div className="flex items-center mt-4">
+          <div className="flex flex-col items-center mt-8">
             {user && <UserButton user={user} />}
             {!user && session.status !== "loading" && <SignInButton />}
+          </div>
+          <div className="flex justify-center">
+            <Image
+              src="/images/efisolar.png"
+              alt="Efisolar"
+              width={150}
+              height={150}
+            />
           </div>
         </SheetContent>
       </Sheet>
