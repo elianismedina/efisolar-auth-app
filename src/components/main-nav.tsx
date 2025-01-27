@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import UserButton from "./UserButton";
 import { signIn, useSession } from "next-auth/react";
+import Image from "next/image";
 
 export default function MainNav() {
   const session = useSession();
@@ -13,7 +14,12 @@ export default function MainNav() {
     <div className="hidden md:flex">
       <nav className="flex items-center gap-3 lg:gap-4 ml-8 ">
         <Link href="/" className="font-bold">
-          Efisolar
+          <Image
+            src="/images/efisolar.png"
+            alt="Efisolar"
+            width={100}
+            height={100}
+          />
         </Link>
         <Link href={`/quote/create`}>
           <Button>Cotizar</Button>

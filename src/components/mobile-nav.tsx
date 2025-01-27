@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { signIn, useSession } from "next-auth/react";
 import UserButton from "./UserButton";
+import Image from "next/image";
 
 export default function MobileNav() {
   const session = useSession();
@@ -16,10 +17,15 @@ export default function MobileNav() {
         <SheetTrigger>
           <AlignJustify />
         </SheetTrigger>
-        <SheetContent side="left">
+        <SheetContent side="right">
           <nav className="flex flex-col gap-3 lg:gap-4 mt-6">
             <Link href="/" className="font-bold">
-              Efisolar
+              <Image
+                src="/images/efisolar.png"
+                alt="Efisolar"
+                width={100}
+                height={100}
+              />
             </Link>
             <Link href={`/quote/create`}>
               <Button>Cotizar</Button>
