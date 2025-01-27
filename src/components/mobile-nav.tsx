@@ -8,9 +8,6 @@ import {
 } from "../components/ui/sheet";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
-import { Button } from "./ui/button";
-import { signIn, useSession } from "next-auth/react";
-import UserButton from "./UserButton";
 
 import React from "react";
 
@@ -28,8 +25,6 @@ const navbarLinks = [
 ];
 
 export default function MobileNav() {
-  const session = useSession();
-  const user = session.data?.user;
   return (
     <div className="md:hidden">
       <Sheet>
@@ -38,10 +33,6 @@ export default function MobileNav() {
         </SheetTrigger>
         <SheetContent side="left">
           <NavBar withSheetClose />
-          <div className="flex items-center mt-4">
-            {user && <UserButton user={user} />}
-            {!user && session.status !== "loading" && <SignInButton />}
-          </div>
         </SheetContent>
       </Sheet>
     </div>
@@ -51,9 +42,6 @@ interface NavBarProps {
   withSheetClose?: boolean;
 }
 
-function SignInButton() {
-  return <Button onClick={() => signIn()}>Iniciar sesión</Button>;
-}
 const NavBar = (props: NavBarProps) => {
   const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
     ? [SheetClose, { asChild: true }]
