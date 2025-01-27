@@ -1,17 +1,17 @@
 "use client";
 
-import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
-import UserButton from "./UserButton";
 import { Button } from "./ui/button";
+import UserButton from "./UserButton";
+import { signIn, useSession } from "next-auth/react";
 
-export default function NavBar() {
+export default function MainNav() {
   const session = useSession();
   const user = session.data?.user;
 
   return (
-    <header className="sticky top-0 bg-background px-3 shadow-sm">
-      <nav className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between gap-3">
+    <div className="hidden md:flex">
+      <nav className="flex items-center gap-3 lg:gap-4 ml-8 ">
         <Link href="/" className="font-bold">
           Efisolar
         </Link>
@@ -21,10 +21,9 @@ export default function NavBar() {
         {user && <UserButton user={user} />}
         {!user && session.status !== "loading" && <SignInButton />}
       </nav>
-    </header>
+    </div>
   );
 }
-
 function SignInButton() {
   return <Button onClick={() => signIn()}>Iniciar sesión</Button>;
 }
