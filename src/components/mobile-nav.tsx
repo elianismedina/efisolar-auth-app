@@ -20,6 +20,11 @@ const navbarLinks = [
     href: "/",
     label: "Home",
   },
+  {
+    id: 2,
+    href: "/quote/create",
+    label: "Cotizar",
+  },
 ];
 
 export default function MobileNav() {
@@ -55,7 +60,11 @@ const NavBar = (props: any) => {
     <nav>
       {navbarLinks.map((item) => (
         <SheetCloseWrapper {...shetCloseWrapperProps} key={item.id}>
-          <Link key={item.id} href={item.href}>
+          <Link
+            key={item.id}
+            href={item.href}
+            className="block p-4 bg-slate-800 text-white"
+          >
             {item.label}
           </Link>
         </SheetCloseWrapper>
