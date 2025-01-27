@@ -10,7 +10,7 @@ export default function MainNav() {
   const user = session.data?.user;
 
   return (
-    <div className="hidden md:flex">
+    <div className="hidden">
       <nav className="flex flex-row gap-4 items-center justify-between w-full">
         <Link href="/" className="font-bold">
           Efisolar
@@ -18,7 +18,7 @@ export default function MainNav() {
         <Link href={`/quote/create`}>
           <Button>Cotizar</Button>
         </Link>
-        <div className="flex items-end gap-3">
+        <div>
           {user && <UserButton user={user} />}
           {!user && session.status !== "loading" && <SignInButton />}
         </div>
