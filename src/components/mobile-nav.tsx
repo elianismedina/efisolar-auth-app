@@ -38,7 +38,7 @@ export default function MobileNav() {
         </SheetTrigger>
         <SheetContent side="left">
           <NavBar withSheetClose />
-          <div className="flex items-end gap-3">
+          <div className="flex items-center mt-4">
             {user && <UserButton user={user} />}
             {!user && session.status !== "loading" && <SignInButton />}
           </div>
@@ -47,11 +47,14 @@ export default function MobileNav() {
     </div>
   );
 }
+interface NavBarProps {
+  withSheetClose?: boolean;
+}
 
 function SignInButton() {
   return <Button onClick={() => signIn()}>Iniciar sesión</Button>;
 }
-const NavBar = (props: any) => {
+const NavBar = (props: NavBarProps) => {
   const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
     ? [SheetClose, { asChild: true }]
     : [React.Fragment, {}];

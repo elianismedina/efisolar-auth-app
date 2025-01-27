@@ -4,22 +4,16 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import UserButton from "./UserButton";
 import { signIn, useSession } from "next-auth/react";
-import Image from "next/image";
 
 export default function MainNav() {
   const session = useSession();
   const user = session.data?.user;
 
   return (
-    <div className="hidden md:flex">
+    <div className="hidden md:flex md:justify-between md:items-center md:px-8 md:py-4 md:shadow-md md:bg-white md:fixed md:w-full md:top-0 md:z-10">
       <nav className="flex items-center gap-3 lg:gap-4 ml-8 ">
         <Link href="/" className="font-bold">
-          <Image
-            src="/images/efisolar.png"
-            alt="Efisolar"
-            width={90}
-            height={90}
-          />
+          Efisolar
         </Link>
         <Link href={`/quote/create`}>
           <Button>Cotizar</Button>
