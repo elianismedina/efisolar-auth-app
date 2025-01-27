@@ -30,8 +30,10 @@ export default function MobileNav() {
             <Link href={`/quote/create`}>
               <Button>Cotizar</Button>
             </Link>
-            {user && <UserButton user={user} />}
-            {!user && session.status !== "loading" && <SignInButton />}
+            <div className="flex items-end gap-3">
+              {user && <UserButton user={user} />}
+              {!user && session.status !== "loading" && <SignInButton />}
+            </div>
           </nav>
         </SheetContent>
       </Sheet>
