@@ -1,12 +1,26 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "../components/ui/sheet";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { signIn, useSession } from "next-auth/react";
 import UserButton from "./UserButton";
-import Image from "next/image";
+
+import React from "react";
+
+const navbarLinks = [
+  {
+    id: 1,
+    href: "/",
+    label: "Home",
+  },
+];
 
 export default function MobileNav() {
   const session = useSession();
@@ -17,24 +31,12 @@ export default function MobileNav() {
         <SheetTrigger>
           <AlignJustify />
         </SheetTrigger>
-        <SheetContent side="right">
-          <nav className="flex flex-col gap-3 lg:gap-4 mt-6">
-            <Link href="/" className="font-bold">
-              <Image
-                src="/images/efisolar.png"
-                alt="Efisolar"
-                width={90}
-                height={90}
-              />
-            </Link>
-            <Link href={`/quote/create`}>
-              <Button>Cotizar</Button>
-            </Link>
-            <div>
-              {user && <UserButton user={user} />}
-              {!user && session.status !== "loading" && <SignInButton />}
-            </div>
-          </nav>
+        <SheetContent side="left">
+          <NavBar withSheetClose />
+          <div className="flex items-end gap-3">
+            {user && <UserButton user={user} />}
+            {!user && session.status !== "loading" && <SignInButton />}
+          </div>
         </SheetContent>
       </Sheet>
     </div>
@@ -44,3 +46,20 @@ export default function MobileNav() {
 function SignInButton() {
   return <Button onClick={() => signIn()}>Iniciar sesión</Button>;
 }
+const NavBar = (props: any) => {
+  const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
+    ? [SheetClose, { asChild: true }]
+    : [React.Fragment, {}];
+
+  return (
+    <nav>
+      {navbarLinks.map((item) => (
+        <SheetCloseWrapper {...shetCloseWrapperProps} key={item.id}>
+          <Link key={item.id} href={item.href}>
+            {item.label}
+          </Link>
+        </SheetCloseWrapper>
+      ))}
+    </nav>
+  );
+};
