@@ -23,14 +23,14 @@ export default function MobileNav() {
               <Image
                 src="/images/efisolar.png"
                 alt="Efisolar"
-                width={100}
-                height={100}
+                width={90}
+                height={90}
               />
             </Link>
             <Link href={`/quote/create`}>
               <Button>Cotizar</Button>
             </Link>
-            <div className="flex items-end gap-3">
+            <div>
               {user && <UserButton user={user} />}
               {!user && session.status !== "loading" && <SignInButton />}
             </div>

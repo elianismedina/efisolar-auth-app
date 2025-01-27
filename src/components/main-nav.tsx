@@ -17,8 +17,8 @@ export default function MainNav() {
           <Image
             src="/images/efisolar.png"
             alt="Efisolar"
-            width={100}
-            height={100}
+            width={90}
+            height={90}
           />
         </Link>
         <Link href={`/quote/create`}>
