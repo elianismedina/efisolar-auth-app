@@ -34,7 +34,7 @@ export default function MobileNav() {
     <div className="md:hidden">
       <Sheet>
         <SheetTrigger>
-          <AlignJustify />
+          <AlignJustify className="mt-4" />
         </SheetTrigger>
         <SheetContent side="left">
           <NavBar withSheetClose />
