@@ -10,8 +10,8 @@ export default function MainNav() {
   const user = session.data?.user;
 
   return (
-    <div className="hidden">
-      <nav className="flex flex-row gap-4 items-center justify-between w-full">
+    <div className="hidden md:flex md:flex-row md:justify-between md:items-center md:px-4 md:py-2">
+      <nav>
         <Link href="/" className="font-bold">
           Efisolar
         </Link>
