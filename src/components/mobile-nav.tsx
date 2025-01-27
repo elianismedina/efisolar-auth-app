@@ -63,7 +63,7 @@ const NavBar = (props: any) => {
           <Link
             key={item.id}
             href={item.href}
-            className="block p-4 bg-slate-800 text-white"
+            className="block py-2 text-lg font-semibold text-gray-800"
           >
             {item.label}
           </Link>
