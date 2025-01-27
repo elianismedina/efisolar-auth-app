@@ -11,7 +11,7 @@ export default function MainNav() {
 
   return (
     <div className="hidden md:flex md:justify-between md:items-center md:px-8 md:py-4 md:shadow-md md:bg-white md:fixed md:w-full md:top-0 md:z-10">
-      <nav className="flex items-center gap-3 lg:gap-4 ml-8 ">
+      <nav>
         <Link href="/" className="font-bold">
           Efisolar
         </Link>
