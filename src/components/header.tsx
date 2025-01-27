@@ -2,6 +2,7 @@ import React from "react";
 import MainNav from "./main-nav";
 import MobileNav from "./mobile-nav";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -15,9 +16,14 @@ export default function Header() {
         <MobileNav />
 
         {/* Desktop & Mobile */}
-        <h1 className="flex items-center justify-end flex-1">
-          <Link href={"/"}>some social media icons</Link>
-        </h1>
+        <Link href={`/`}>
+          <Image
+            src="/images/efisolar.png"
+            alt="Efisolar"
+            width={150}
+            height={50}
+          />
+        </Link>
       </div>
     </header>
   );
