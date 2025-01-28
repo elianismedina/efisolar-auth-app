@@ -12,10 +12,8 @@ import { Button } from "./ui/button";
 import { signIn, useSession } from "next-auth/react";
 import UserButton from "./UserButton";
 
-import React, { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import React from "react";
 
 const navbarLinks = [
   {
@@ -81,15 +79,6 @@ function SignInButton() {
   return <Button onClick={() => signIn()}>Iniciar sesión</Button>;
 }
 const NavBar = (props: NavBarProps) => {
-  const router = useRouter();
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-  if (!isMounted) {
-    return null;
-  }
-  const currentPath = router.pathname;
   const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
     ? [SheetClose, { asChild: true }]
     : [React.Fragment, {}];
@@ -101,9 +90,7 @@ const NavBar = (props: NavBarProps) => {
           <Link
             key={item.id}
             href={item.href}
-            className={`block py-2 text-lg font-semibold ${
-              currentPath === item.href ? "active" : ""
-            }`}
+            className="block py-2 text-center text-2xl"
           >
             {item.label}
           </Link>
