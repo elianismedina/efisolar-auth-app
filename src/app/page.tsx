@@ -10,14 +10,9 @@ export default async function Home() {
         Te ofrecemos lo mejor de la energía solar para tu empresa: un futuro
         verde y sostenible
       </p>
-      <Image
-        src="/images/efisolar.png"
-        alt="Efisolar"
-        width={150}
-        height={150}
-      />
+      <Image src="/images/AIbril.png" alt="AIbril" width={150} height={150} />
       <footer className="text-center">
-        <p>© 2025 Efisolar</p>
+        <p>© 2025 AIbril solutions</p>
       </footer>
     </main>
   );

@@ -45,8 +45,8 @@ export default function MobileNav() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/images/efisolar.png"
-              alt="Efisolar"
+              src="/images/AIbril.png"
+              alt="AIbril"
               width={150}
               height={150}
             />

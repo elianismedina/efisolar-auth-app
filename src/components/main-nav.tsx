@@ -14,7 +14,7 @@ export default function MainNav() {
       <nav className="flex gap-4 items-center justify-center w-full max-w-6xl p-2 mx-auto">
         <div className="flex-1">
           <Link href="/" className="font-bold">
-            Efisolar
+            AIbril
           </Link>
         </div>
         <div className="flex gap-4">
