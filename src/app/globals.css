@@ -76,6 +76,6 @@
 }
 @layer components{
   .active{
-    @apply text-blue-500 underline-offset-8;
+    @apply text-orange-600 font-bold underline-offset-8;
   }
 }
