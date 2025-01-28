@@ -12,9 +12,10 @@ import { Button } from "./ui/button";
 import { signIn, useSession } from "next-auth/react";
 import UserButton from "./UserButton";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const navbarLinks = [
   {
@@ -81,6 +82,13 @@ function SignInButton() {
 }
 const NavBar = (props: NavBarProps) => {
   const router = useRouter();
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  if (!isMounted) {
+    return null;
+  }
   const currentPath = router.pathname;
   const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
     ? [SheetClose, { asChild: true }]
