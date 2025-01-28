@@ -15,7 +15,6 @@ import UserButton from "./UserButton";
 
 import Image from "next/image";
 import React from "react";
-import path from "path";
 
 const navbarLinks = [
   {
@@ -82,7 +81,7 @@ function SignInButton() {
 }
 const NavBar = (props: NavBarProps) => {
   const currentPath = usePathname();
-  const isActive = (path) => {
+  const isActive = (path: string) => {
     return currentPath === path;
   };
   const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
