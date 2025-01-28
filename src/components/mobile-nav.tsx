@@ -14,6 +14,7 @@ import UserButton from "./UserButton";
 
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const navbarLinks = [
   {
@@ -79,6 +80,8 @@ function SignInButton() {
   return <Button onClick={() => signIn()}>Iniciar sesión</Button>;
 }
 const NavBar = (props: NavBarProps) => {
+  const router = useRouter();
+  const currentPath = router.pathname;
   const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
     ? [SheetClose, { asChild: true }]
     : [React.Fragment, {}];
@@ -90,7 +93,9 @@ const NavBar = (props: NavBarProps) => {
           <Link
             key={item.id}
             href={item.href}
-            className="block py-2 text-lg font-semibold text-gray-800"
+            className={`block py-2 text-lg font-semibold ${
+              currentPath === item.href ? "text-blue-500" : "text-gray-800"
+            }`}
           >
             {item.label}
           </Link>
