@@ -19,12 +19,27 @@ const navbarLinks = [
   {
     id: 1,
     href: "/",
-    label: "Home",
+    label: "Inicio",
   },
   {
     id: 2,
     href: "/quote/create",
     label: "Cotizar",
+  },
+  {
+    id: 3,
+    href: "/about",
+    label: "Quienes somos",
+  },
+  {
+    id: 4,
+    href: "/solutions",
+    label: "Soluciones IA",
+  },
+  {
+    id: 5,
+    href: "/contact",
+    label: "Contáctanos",
   },
 ];
 
