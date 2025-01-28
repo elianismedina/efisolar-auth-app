@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 
 import {
   Sheet,
@@ -14,6 +15,7 @@ import UserButton from "./UserButton";
 
 import Image from "next/image";
 import React from "react";
+import path from "path";
 
 const navbarLinks = [
   {
@@ -79,6 +81,10 @@ function SignInButton() {
   return <Button onClick={() => signIn()}>Iniciar sesión</Button>;
 }
 const NavBar = (props: NavBarProps) => {
+  const currentPath = usePathname();
+  const isActive = (path) => {
+    return currentPath === path;
+  };
   const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
     ? [SheetClose, { asChild: true }]
     : [React.Fragment, {}];
@@ -90,7 +96,9 @@ const NavBar = (props: NavBarProps) => {
           <Link
             key={item.id}
             href={item.href}
-            className="block py-2 text-center text-2xl"
+            className={`block py-2 text-center ${
+              isActive(item.href) ? "text-amber-500" : "text-gray-700"
+            }`}
           >
             {item.label}
           </Link>
