@@ -5,7 +5,7 @@ import MobileNav from "./mobile-nav";
 export default function Header() {
   return (
     <header className="sticky top-0 w-full border-b bg-amber-400">
-      <div className="h-14 container">
+      <div className="h-16 flex items-center justify-end px-4 md:px-8">
         {/* Desktop */}
         <MainNav />
 

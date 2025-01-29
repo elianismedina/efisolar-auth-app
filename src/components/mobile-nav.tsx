@@ -48,7 +48,18 @@ export default function MobileNav() {
   const session = useSession();
   const user = session.data?.user;
   return (
-    <div className="md:hidden">
+    <div className="md:hidden flex flex-col-2 justify-between w-full">
+      <div className="">
+        <Link href="/">
+          <Image
+            src="/images/AIbril.png"
+            alt="AIbril"
+            width={150}
+            height={50}
+            className="mb-6"
+          />
+        </Link>
+      </div>
       <Sheet>
         <SheetTrigger>
           <AlignJustify className="mt-4" />

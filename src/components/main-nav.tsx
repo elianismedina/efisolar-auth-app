@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import UserButton from "./UserButton";
 import { signIn, useSession } from "next-auth/react";
+import Image from "next/image";
 
 export default function MainNav() {
   const session = useSession();
@@ -11,16 +12,24 @@ export default function MainNav() {
 
   return (
     <div className="hidden md:flex">
-      <nav className="flex gap-4 items-center justify-center w-full max-w-6xl p-2 mx-auto">
-        <div className="flex-1">
-          <Link href="/" className="font-bold">
-            AIbril
+      <nav className="flex flex-nowrap w-full justify-between items-center py-4">
+        <div className="flex items-center">
+          <Link href="/">
+            <Image
+              src="/images/AIbril.png"
+              alt="AIbril"
+              width={150}
+              height={50}
+              className="mb-6"
+            />
           </Link>
         </div>
-        <div className="flex gap-4">
-          <Link href={`/quote/create`}>
-            <Button>Cotizar</Button>
-          </Link>
+        <div className="flex items-center space-x-4">
+          <div>
+            <Link href={`/quote/create`}>
+              <Button>Cotizar</Button>
+            </Link>
+          </div>
           <div>
             {user && <UserButton user={user} />}
             {!user && session.status !== "loading" && <SignInButton />}
