@@ -24,23 +24,28 @@ const navbarLinks = [
   },
   {
     id: 2,
-    href: "/quote/create",
-    label: "Cotizar",
-  },
-  {
-    id: 3,
-    href: "/about",
-    label: "Quienes somos",
-  },
-  {
-    id: 4,
     href: "/solutions",
     label: "Soluciones IA",
   },
   {
+    id: 3,
+    href: "/resources",
+    label: "Recursos",
+  },
+  {
+    id: 4,
+    href: "/about",
+    label: "Sobre nosotros",
+  },
+  {
     id: 5,
-    href: "/contact",
-    label: "Contáctanos",
+    href: "/prices",
+    label: "Precios",
+  },
+  {
+    id: 6,
+    href: "/quote/create",
+    label: "Hablar con ventas",
   },
 ];
 
@@ -62,7 +67,7 @@ export default function MobileNav() {
       </div>
       <Sheet>
         <SheetTrigger>
-          <AlignJustify className="mt-4" />
+          <AlignJustify className="mt-4" size={40} />
         </SheetTrigger>
         <SheetContent side="left">
           <NavBar withSheetClose />
@@ -95,14 +100,14 @@ const NavBar = (props: NavBarProps) => {
   const isActive = (path: string) => {
     return currentPath === path;
   };
-  const [SheetCloseWrapper, shetCloseWrapperProps] = props.withSheetClose
+  const [SheetCloseWrapper, sheetCloseWrapperProps] = props.withSheetClose
     ? [SheetClose, { asChild: true }]
     : [React.Fragment, {}];
 
   return (
     <nav>
       {navbarLinks.map((item) => (
-        <SheetCloseWrapper {...shetCloseWrapperProps} key={item.id}>
+        <SheetCloseWrapper {...sheetCloseWrapperProps} key={item.id}>
           <Link
             key={item.id}
             href={item.href}
