@@ -107,7 +107,9 @@ const NavBar = (props: NavBarProps) => {
             key={item.id}
             href={item.href}
             className={`block py-2 text-center ${
-              isActive(item.href) ? "text-amber-500" : "text-gray-700"
+              isActive(item.href)
+                ? "text-amber-500 font-extrabold"
+                : "text-gray-700"
             }`}
           >
             {item.label}
