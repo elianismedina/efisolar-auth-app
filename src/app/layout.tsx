@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "../components/header";
 import { TailwindIndicator } from "../components/tailwind-indicator";
 import Footer from "../components/footer";
+import WhatsappLive from "../components/whatsapp-live";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <WhatsappLive />
           <TailwindIndicator />
         </SessionProvider>
       </body>

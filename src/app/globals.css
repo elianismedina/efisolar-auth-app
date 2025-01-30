@@ -79,3 +79,36 @@
     @apply text-orange-600 font-bold underline-offset-8;
   }
 }
+.whatsapp-link{
+  position: fixed;
+  bottom: -80px;
+  right: 40px;
+  z-index: 50;
+  transition: bottom 0.3s ease;
+
+}
+.whatsapp-link.visible{
+  bottom: 60px;
+}
+.whatsapp-icon{
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+.whatsapp-icon:hover{
+  transform: scale(1.2);
+}
+@media only screen and (max-width: 580px){
+  .whatsapp-link{
+    position: fixed;
+    bottom: -80px;
+    right: 30px;
+    z-index: 50;
+    transition: bottom 0.3s ease;
+  
+  }
+  .whatsapp-link.visible{
+    bottom: 50px;
+  }
+  
+}
