@@ -10,9 +10,6 @@ export default async function Home() {
         Ponemos la inteligencia artificial al servicio de tu empresa
       </p>
       <Image src="/images/AIBridge.png" alt="AIbril" width={150} height={150} />
-      <footer className="text-center">
-        <p>© 2025 ABridge solutions</p>
-      </footer>
     </main>
   );
 }
