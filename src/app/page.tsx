@@ -11,7 +11,7 @@ export default async function Home() {
       </p>
       <Image src="/images/AIBridge.png" alt="AIbril" width={150} height={150} />
       <footer className="text-center">
-        <p>© 2025 AIbril solutions</p>
+        <p>© 2025 ABridge solutions</p>
       </footer>
     </main>
   );
