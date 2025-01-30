@@ -3,12 +3,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
-import {
-  DribbbleIcon,
-  GithubIcon,
-  TwitchIcon,
-  TwitterIcon,
-} from "lucide-react";
+import { Instagram, Linkedin, Facebook } from "lucide-react";
 import Image from "next/image";
 const footerLinks = [
   {
@@ -21,7 +16,7 @@ const footerLinks = [
   },
   {
     title: "Precios",
-    href: "#/prices",
+    href: "/prices",
   },
   {
     title: "Trabaja con nosotros",
@@ -86,16 +81,13 @@ const Footer = () => {
             </span>
             <div className="flex items-center gap-5 text-muted-foreground">
               <Link href="#" target="_blank">
-                <TwitterIcon className="h-5 w-5 hover:text-amber-500" />
+                <Instagram className="h-5 w-5 hover:text-amber-500" />
               </Link>
               <Link href="#" target="_blank">
-                <DribbbleIcon className="h-5 w-5 hover:text-amber-500" />
+                <Linkedin className="h-5 w-5 hover:text-amber-500" />
               </Link>
               <Link href="#" target="_blank">
-                <TwitchIcon className="h-5 w-5 hover:text-amber-500" />
-              </Link>
-              <Link href="#" target="_blank">
-                <GithubIcon className="h-5 w-5 hover:text-amber-500" />
+                <Facebook className="h-5 w-5 hover:text-amber-500" />
               </Link>
             </div>
           </div>

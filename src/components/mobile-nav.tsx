@@ -7,7 +7,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "../components/ui/sheet";
-import { AlignJustify } from "lucide-react";
+import { AlignJustify, Facebook, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { signIn, useSession } from "next-auth/react";
@@ -71,17 +71,20 @@ export default function MobileNav() {
         </SheetTrigger>
         <SheetContent side="left">
           <NavBar withSheetClose />
+          <div className="flex flex-row items-center justify-center gap-5 text-muted-foreground mt-4">
+            <Link href="#" target="_blank">
+              <Instagram className="h-5 w-5 hover:text-amber-500" />
+            </Link>
+            <Link href="#" target="_blank">
+              <Linkedin className="h-5 w-5 hover:text-amber-500" />
+            </Link>
+            <Link href="#" target="_blank">
+              <Facebook className="h-5 w-5 hover:text-amber-500" />
+            </Link>
+          </div>
           <div className="flex flex-col items-center mt-8">
             {user && <UserButton user={user} />}
             {!user && session.status !== "loading" && <SignInButton />}
-          </div>
-          <div className="flex justify-center mt-4">
-            <Image
-              src="/images/AIBridge.png"
-              alt="AIbridge"
-              width={150}
-              height={150}
-            />
           </div>
         </SheetContent>
       </Sheet>
