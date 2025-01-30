@@ -12,33 +12,33 @@ import {
 import Image from "next/image";
 const footerLinks = [
   {
-    title: "Overview",
-    href: "#",
+    title: "Soluciones IA",
+    href: "/solutions",
   },
   {
-    title: "Features",
-    href: "#",
+    title: "Recursos",
+    href: "/resources",
   },
   {
-    title: "Pricing",
-    href: "#",
+    title: "Precios",
+    href: "#/prices",
   },
   {
-    title: "Careers",
-    href: "#",
+    title: "Trabaja con nosotros",
+    href: "/careers",
   },
   {
-    title: "Help",
-    href: "#",
+    title: "Contacto",
+    href: "/contact",
   },
   {
-    title: "Privacy",
+    title: "Política de Privacidad",
     href: "#",
   },
 ];
 const Footer = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-r from-neutral-300 to-stone-400">
       <footer>
         <div className="max-w-screen-xl mx-auto">
           <div className="py-12 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6 xl:px-0">
