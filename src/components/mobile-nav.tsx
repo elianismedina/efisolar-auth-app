@@ -57,7 +57,7 @@ export default function MobileNav() {
       <div className="">
         <Link href="/">
           <Image
-            src="/images/AIbridge.png"
+            src="/images/AIBridge.png"
             alt="AIbridge"
             width={150}
             height={50}
@@ -77,7 +77,7 @@ export default function MobileNav() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/images/AIbridge.png"
+              src="/images/AIBridge.png"
               alt="AIbridge"
               width={150}
               height={150}
