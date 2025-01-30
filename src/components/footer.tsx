@@ -55,7 +55,7 @@ const Footer = () => {
                   <li key={title}>
                     <Link
                       href={href}
-                      className="text-muted-foreground hover:text-foreground"
+                      className="text-muted-foreground hover:text-amber-500"
                     >
                       {title}
                     </Link>
@@ -65,10 +65,12 @@ const Footer = () => {
             </div>
             {/* Subscribe Newsletter */}
             <div className="max-w-xs w-full">
-              <h6 className="font-semibold">Stay up to date</h6>
+              <h6 className="font-semibold">
+                Recibe información útil sobre Inteligencia artificial
+              </h6>
               <form className="mt-6 flex items-center gap-2">
-                <Input type="email" placeholder="Enter your email" />
-                <Button>Subscribe</Button>
+                <Input type="email" placeholder="correo electrónico" />
+                <Button>Suscribirse</Button>
               </form>
             </div>
           </div>
@@ -82,7 +84,7 @@ const Footer = () => {
               </Link>
               . Todos los derechos reservados.
             </span>
-            <div className="flex items-center gap-5 text-muted-foreground">
+            <div className="flex items-center gap-5 text-muted-foreground hover:text-amber-500">
               <Link href="#" target="_blank">
                 <TwitterIcon className="h-5 w-5" />
               </Link>
