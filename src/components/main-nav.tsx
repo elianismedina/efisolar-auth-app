@@ -16,8 +16,8 @@ export default function MainNav() {
         <div className="flex items-center">
           <Link href="/">
             <Image
-              src="/images/AIbril.png"
-              alt="AIbril"
+              src="/images/AIbridge.png"
+              alt="AIbridge"
               width={150}
               height={50}
               className="mb-6"
