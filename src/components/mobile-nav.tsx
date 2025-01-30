@@ -75,7 +75,7 @@ export default function MobileNav() {
             {user && <UserButton user={user} />}
             {!user && session.status !== "loading" && <SignInButton />}
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-4">
             <Image
               src="/images/AIBridge.png"
               alt="AIbridge"
