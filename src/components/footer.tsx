@@ -55,7 +55,7 @@ const Footer = () => {
                   <li key={title}>
                     <Link
                       href={href}
-                      className="text-muted-foreground hover:text-amber-500"
+                      className="text-muted-foreground hover:text-amber-500 font-bold"
                     >
                       {title}
                     </Link>
@@ -86,16 +86,16 @@ const Footer = () => {
             </span>
             <div className="flex items-center gap-5 text-muted-foreground">
               <Link href="#" target="_blank">
-                <TwitterIcon className="h-5 w-5 hover:bg-amber-500" />
+                <TwitterIcon className="h-5 w-5 hover:text-amber-500" />
               </Link>
               <Link href="#" target="_blank">
-                <DribbbleIcon className="h-5 w-5 hover:bg-amber-500" />
+                <DribbbleIcon className="h-5 w-5 hover:text-amber-500" />
               </Link>
               <Link href="#" target="_blank">
-                <TwitchIcon className="h-5 w-5 hover:bg-amber-500" />
+                <TwitchIcon className="h-5 w-5 hover:text-amber-500" />
               </Link>
               <Link href="#" target="_blank">
-                <GithubIcon className="h-5 w-5 hover:bg-amber-500" />
+                <GithubIcon className="h-5 w-5 hover:text-amber-500" />
               </Link>
             </div>
           </div>
