@@ -6,7 +6,9 @@ export default async function Home() {
       <h1 className="text-center text-4xl font-bold">
         Menos costos, más eficiencia
       </h1>
-      <p>Ponemos la inteligencia artificial al servicio de tu empresa</p>
+      <p className=" text-center">
+        Ponemos la inteligencia artificial al servicio de tu empresa
+      </p>
       <Image src="/images/AIBridge.png" alt="AIbril" width={150} height={150} />
       <footer className="text-center">
         <p>© 2025 AIbril solutions</p>

@@ -12,7 +12,7 @@ export default function MainNav() {
 
   return (
     <div className="hidden md:flex">
-      <nav className="flex flex-nowrap w-full justify-between items-center py-4">
+      <nav className="flex flex-nowrap w-full justify-between items-center py-4 gap-8">
         <div className="flex items-center">
           <Link href="/">
             <Image
