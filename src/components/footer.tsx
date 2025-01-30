@@ -55,7 +55,7 @@ const Footer = () => {
                   <li key={title}>
                     <Link
                       href={href}
-                      className="text-muted-foreground hover:text-amber-500 font-bold"
+                      className="text-muted-foreground hover:text-amber-500 hover:font-semibold"
                     >
                       {title}
                     </Link>
