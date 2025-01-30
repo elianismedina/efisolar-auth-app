@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
             {/* Subscribe Newsletter */}
             <div className="max-w-xs w-full">
-              <h6 className="font-semibold">
+              <h6 className="font-semibold text-muted-foreground">
                 Recibe información útil sobre Inteligencia artificial
               </h6>
               <form className="mt-6 flex items-center gap-2">
@@ -84,18 +84,18 @@ const Footer = () => {
               </Link>
               . Todos los derechos reservados.
             </span>
-            <div className="flex items-center gap-5 text-muted-foreground hover:text-amber-500">
+            <div className="flex items-center gap-5 text-muted-foreground">
               <Link href="#" target="_blank">
-                <TwitterIcon className="h-5 w-5" />
+                <TwitterIcon className="h-5 w-5 hover:bg-amber-500" />
               </Link>
               <Link href="#" target="_blank">
-                <DribbbleIcon className="h-5 w-5" />
+                <DribbbleIcon className="h-5 w-5 hover:bg-amber-500" />
               </Link>
               <Link href="#" target="_blank">
-                <TwitchIcon className="h-5 w-5" />
+                <TwitchIcon className="h-5 w-5 hover:bg-amber-500" />
               </Link>
               <Link href="#" target="_blank">
-                <GithubIcon className="h-5 w-5" />
+                <GithubIcon className="h-5 w-5 hover:bg-amber-500" />
               </Link>
             </div>
           </div>
