@@ -6,7 +6,8 @@ export default async function Home() {
     <main className="flex flex-col md:flex-row md:gap-16 items-center justify-center gap-6 px-3 py-10 mx-auto max-w-7xl">
       <div className="p-8">
         <h1 className="text-left text-4xl font-bold">
-          Potencia tu negocio con <br /> Inteligencia Artifical
+          Potencia tu negocio con <br />{" "}
+          <span className="text-amber-500">Inteligencia Artifical</span>
         </h1>
         <p className=" text-left mt-4">
           Transformamos tu negocios con soluciones IA innovadoras y <br />
@@ -21,10 +22,10 @@ export default async function Home() {
       </div>
       <div className="hidden md:block">
         <Image
-          src="/images/Heroimage.jpeg"
+          src="/images/HeroImage.jpeg"
           alt="AI solutions"
-          width={350}
-          height={350}
+          width={550}
+          height={250}
           className="rounded-lg"
         />
       </div>
