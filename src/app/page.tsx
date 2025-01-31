@@ -1,15 +1,33 @@
 import Image from "next/image";
+import { Button } from "../components/ui/button";
 
 export default async function Home() {
   return (
-    <main className="flex flex-col items-center gap-6 px-3 py-10">
-      <h1 className="text-center text-4xl font-bold">
-        Menos costos, más eficiencia
-      </h1>
-      <p className=" text-center">
-        Ponemos la inteligencia artificial al servicio de tu empresa
-      </p>
-      <Image src="/images/AIBridge.png" alt="AIbril" width={150} height={150} />
+    <main className="flex flex-col md:flex-row md:gap-16 items-center justify-center gap-6 px-3 py-10 mx-auto max-w-7xl">
+      <div className="p-8">
+        <h1 className="text-left text-4xl font-bold">
+          Potencia tu negocio con <br /> Inteligencia Artifical
+        </h1>
+        <p className=" text-left mt-4">
+          Transformamos tu negocios con soluciones IA innovadoras y <br />
+          personalizadas para impulsar tu crecimiento
+        </p>
+        <div className="flex flex-row gap-4">
+          <Button className="mt-6">Comenzar ahora</Button>
+          <Button className="mt-6" variant="secondary">
+            Ver Demo
+          </Button>
+        </div>
+      </div>
+      <div className="hidden md:block">
+        <Image
+          src="/images/Heroimage.jpeg"
+          alt="AI solutions"
+          width={350}
+          height={350}
+          className="rounded-lg"
+        />
+      </div>
     </main>
   );
 }
