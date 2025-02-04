@@ -50,7 +50,7 @@ const Footer = () => {
                   <li key={title}>
                     <Link
                       href={href}
-                      className="text-muted-foreground hover:text-amber-500 hover:font-semibold"
+                      className="text-muted-foreground hover:text-primary hover:font-semibold"
                     >
                       {title}
                     </Link>
@@ -81,13 +81,13 @@ const Footer = () => {
             </span>
             <div className="flex items-center gap-5 text-muted-foreground">
               <Link href="#" target="_blank">
-                <Instagram className="h-5 w-5 hover:text-amber-500" />
+                <Instagram className="h-5 w-5 hover:text-primary" />
               </Link>
               <Link href="#" target="_blank">
-                <Linkedin className="h-5 w-5 hover:text-amber-500" />
+                <Linkedin className="h-5 w-5 hover:text-primary" />
               </Link>
               <Link href="#" target="_blank">
-                <Facebook className="h-5 w-5 hover:text-amber-500" />
+                <Facebook className="h-5 w-5 hover:text-primary" />
               </Link>
             </div>
           </div>
