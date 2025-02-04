@@ -7,11 +7,14 @@ export default function Home() {
       <div className="p-8">
         <h1 className="text-left text-4xl font-bold">
           Potencia tu negocio con <br />{" "}
-          <span className="text-amber-500">Inteligencia Artifical</span>
+          <span className="text-amber-500">Agentes de IA personalizados</span>
         </h1>
         <p className=" text-left mt-4">
-          Transformamos tu negocios con soluciones IA innovadoras y <br />
-          personalizadas para impulsar tu crecimiento
+          Ayudamos a empresas a implementar soluciones de IA personalizadas y
+          escalarlas sin empleados adicionales. <br /> No requiere conocimientos
+          técnicos - Nosotros nos enacargamos de todo. <br /> Lidera el cambio,
+          aumenta la productividad y deja que la automotización <br />
+          impulse tu crecimiento.
         </p>
         <div className="flex flex-row gap-4">
           <Button className="mt-6">Comenzar ahora</Button>

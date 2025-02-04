@@ -61,7 +61,7 @@ export default function MobileNav() {
             alt="QuimbaIA"
             width={100}
             height={100}
-            className="mb-6"
+            className="mb-4 mt-4"
           />
         </Link>
       </div>
