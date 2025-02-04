@@ -24,8 +24,8 @@ export default async function Home() {
         <Image
           src="/images/HeroImage.jpeg"
           alt="AI solutions"
-          width={550}
-          height={250}
+          width={450}
+          height={450}
           className="rounded-lg"
         />
       </div>
