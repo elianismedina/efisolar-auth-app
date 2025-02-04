@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     template: "%s | Consultoría IA",
-    absolute: "AIBridge | Consultoría en IA",
+    absolute: "QuimbaIA | Consultoría en IA",
   },
   description: "Consultoría en Inteligencia Artificial",
 };

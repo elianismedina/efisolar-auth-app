@@ -40,8 +40,8 @@ const Footer = () => {
             <div>
               {/* Logo */}
               <Image
-                src="/images/AIBridge.png"
-                alt="AIBridge"
+                src="/images/QuimbaIa.png"
+                alt="QuimbaIA"
                 width={150}
                 height={150}
               />

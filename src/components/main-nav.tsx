@@ -16,11 +16,11 @@ export default function MainNav() {
         <div className="flex items-center">
           <Link href="/">
             <Image
-              src="/images/AIBridge.png"
-              alt="AIBridge"
-              width={150}
-              height={50}
-              className="mb-6"
+              src="/images/QuimbaIA.png"
+              alt="QuimbaIA"
+              width={100}
+              height={100}
+              className="mb-4 mt-4"
             />
           </Link>
         </div>

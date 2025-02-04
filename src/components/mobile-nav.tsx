@@ -54,13 +54,13 @@ export default function MobileNav() {
   const user = session.data?.user;
   return (
     <div className="md:hidden flex flex-col-2 justify-between w-full">
-      <div className="">
+      <div className="mt-4 flex justify-center">
         <Link href="/">
           <Image
-            src="/images/AIBridge.png"
-            alt="AIbridge"
-            width={150}
-            height={50}
+            src="/images/QuimbaIA.png"
+            alt="QuimbaIA"
+            width={100}
+            height={100}
             className="mb-6"
           />
         </Link>
@@ -73,13 +73,13 @@ export default function MobileNav() {
           <NavBar withSheetClose />
           <div className="flex flex-row items-center justify-center gap-5 text-muted-foreground mt-4">
             <Link href="#" target="_blank">
-              <Instagram className="h-5 w-5 hover:text-amber-500" />
+              <Instagram className="h-5 w-5 hover:primary" />
             </Link>
             <Link href="#" target="_blank">
-              <Linkedin className="h-5 w-5 hover:text-amber-500" />
+              <Linkedin className="h-5 w-5 hover:primary" />
             </Link>
             <Link href="#" target="_blank">
-              <Facebook className="h-5 w-5 hover:text-amber-500" />
+              <Facebook className="h-5 w-5 hover:primary" />
             </Link>
           </div>
           <div className="flex flex-col items-center mt-8">
@@ -116,7 +116,7 @@ const NavBar = (props: NavBarProps) => {
             href={item.href}
             className={`block py-2 text-center ${
               isActive(item.href)
-                ? "text-amber-500 font-extrabold"
+                ? "text-primary font-extrabold"
                 : "text-gray-700"
             }`}
           >
