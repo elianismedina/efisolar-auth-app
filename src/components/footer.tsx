@@ -50,7 +50,7 @@ const Footer = () => {
                   <li key={title}>
                     <Link
                       href={href}
-                      className="text-muted-foreground hover:text-primary hover:font-semibold"
+                      className="text-secondary hover:font-semibold"
                     >
                       {title}
                     </Link>
@@ -60,7 +60,7 @@ const Footer = () => {
             </div>
             {/* Subscribe Newsletter */}
             <div className="max-w-xs w-full">
-              <h6 className="font-semibold text-muted-foreground">
+              <h6 className="font-semibold text-secondary">
                 Recibe información útil sobre Inteligencia artificial
               </h6>
               <form className="mt-6 flex items-center gap-2">
@@ -72,14 +72,14 @@ const Footer = () => {
           <Separator />
           <div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0">
             {/* Copyright */}
-            <span className="text-muted-foreground">
+            <span className="text-secondary">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
-                AIBridge Solutions
+                QuimbaIA
               </Link>
               . Todos los derechos reservados.
             </span>
-            <div className="flex items-center gap-5 text-muted-foreground">
+            <div className="flex items-center gap-5 text-secondary">
               <Link href="#" target="_blank">
                 <Instagram className="h-5 w-5 hover:text-primary" />
               </Link>

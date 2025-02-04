@@ -5,16 +5,16 @@ export default function Home() {
   return (
     <main className="flex flex-col md:flex-row md:gap-16 items-center justify-center gap-6 px-3 py-10 mx-auto max-w-7xl">
       <div className="p-8">
-        <h1 className="text-left text-4xl font-bold">
+        <h1 className="text-center md:text-left text-4xl font-bold">
           Potencia tu negocio con <br />{" "}
-          <span className="text-amber-500">Agentes de IA personalizados</span>
+          <span className="text-primary">Agentes de IA personalizados</span>
         </h1>
-        <p className=" text-left mt-4">
+        <p className=" text-center md:text-left mt-4">
           Ayudamos a empresas a implementar soluciones de IA personalizadas y
           escalarlas sin empleados adicionales. <br /> No requiere conocimientos
           técnicos - Nosotros nos enacargamos de todo. <br /> Lidera el cambio,
-          aumenta la productividad y deja que la automotización <br />
-          impulse tu crecimiento.
+          aumenta la productividad y deja que la automotización impulse tu
+          crecimiento.
         </p>
         <div className="flex flex-row gap-4">
           <Button className="mt-6">Comenzar ahora</Button>
