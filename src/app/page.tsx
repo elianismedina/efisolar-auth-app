@@ -3,7 +3,7 @@ import { Button } from "../components/ui/button";
 
 export default function Home() {
   return (
-    <main className="flex flex-col md:flex-row md:gap-16 items-center justify-center gap-6 px-3 py-10 mx-auto max-w-7xl">
+    <main className="flex flex-col md:flex-row md:gap-16 items-center justify-center gap-6 px-3 py-2 mx-auto max-w-7xl">
       <div className="p-8">
         <h1 className="text-center md:text-left text-4xl font-bold">
           Potencia tu negocio con <br />{" "}
@@ -14,7 +14,7 @@ export default function Home() {
           y escalarlas sin empleados adicionales. <br /> No requiere
           conocimientos técnicos - Nosotros nos enacargamos de todo. <br />{" "}
           Lidera el cambio, aumenta la productividad y deja que la
-          automotización impulse tu crecimiento.
+          automatización impulse tu crecimiento.
         </p>
         <div className="flex flex-row gap-4">
           <Button className="mt-6">Comenzar ahora</Button>
