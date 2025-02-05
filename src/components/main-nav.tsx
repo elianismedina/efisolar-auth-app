@@ -5,10 +5,27 @@ import { Button } from "./ui/button";
 import UserButton from "./UserButton";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
+import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "../components/ui/dropdown-menu";
 
 export default function MainNav() {
   const session = useSession();
   const user = session.data?.user;
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className="hidden md:flex max-w-6xl mx-auto">
@@ -28,17 +45,40 @@ export default function MainNav() {
         {/* Links */}
         <div className="flex items-center justify-between space-x-1">
           <div className="py-5 px-3">
-            <Link
-              href="/services"
-              className="font-medium text-xl text-secondary hover:text-primary transition-colors
-              duration-300 ease-in-out"
-            >
-              Soluciones IA
-            </Link>
+            <DropdownMenu onOpenChange={handleToggle}>
+              <DropdownMenuTrigger asChild>
+                <div
+                  className="font-medium text-xl text-secondary hover:text-primary transition-colors
+              duration-300 ease-in-out cursor-pointer mr-2"
+                >
+                  Soluciones IA
+                  <span className="absolute mt-1 ml-1">
+                    {" "}
+                    {isOpen ? <FaChevronUp /> : <FaChevronDown />}
+                  </span>
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>Automatiza tu negocio</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem>
+                    <Link href="/solutions">Chatbots</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link href="/solutions">Automatización de procesos</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>Análisis de sentimientos</DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Campañas de marketing personalizadas
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           <div className="py-5 px-3">
             <Link
-              href="/services"
+              href="/usecases"
               className="font-medium text-xl text-secondary hover:text-primary transition-colors
               duration-300 ease-in-out"
             >
@@ -47,7 +87,7 @@ export default function MainNav() {
           </div>
           <div className="py-5 px-3">
             <Link
-              href="/services"
+              href="/contact"
               className="font-medium text-xl text-secondary hover:text-primary transition-colors
               duration-300 ease-in-out"
             >
@@ -56,7 +96,7 @@ export default function MainNav() {
           </div>
           <div className="py-5 px-3">
             <Link
-              href="/services"
+              href="/resources"
               className="font-medium text-xl text-secondary hover:text-primary transition-colors
               duration-300 ease-in-out"
             >
