@@ -68,9 +68,13 @@ export default function MainNav() {
                   <DropdownMenuItem>
                     <Link href="/solutions">Automatización de procesos</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>Análisis de sentimientos</DropdownMenuItem>
                   <DropdownMenuItem>
-                    Campañas de marketing personalizadas
+                    <Link href="/solutions">Análisis de sentimientos</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link href="/solutions">
+                      Campañas de marketing personalizadas
+                    </Link>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
