@@ -11,10 +11,11 @@ export default function MainNav() {
   const user = session.data?.user;
 
   return (
-    <div className="hidden md:flex">
-      <nav className="flex flex-nowrap w-full justify-between items-center py-4 gap-8">
-        <div className="flex items-center">
-          <Link href="/">
+    <div className="hidden md:flex max-w-6xl mx-auto">
+      <nav className="flex justify-between">
+        {/* Logo */}
+        <div className="flex-initial">
+          <Link href="/" className="flex items-start py-5 px-3">
             <Image
               src="/images/QuimbaIA.png"
               alt="QuimbaIA"
@@ -24,13 +25,50 @@ export default function MainNav() {
             />
           </Link>
         </div>
-        <div className="flex items-center space-x-4">
-          <div>
-            <Link href={`/quote/create`}>
-              <Button>Cotizar</Button>
+        {/* Links */}
+        <div className="flex items-center justify-between space-x-1">
+          <div className="py-5 px-3">
+            <Link
+              href="/services"
+              className="font-medium text-xl text-secondary hover:text-primary transition-colors
+              duration-300 ease-in-out"
+            >
+              Soluciones IA
             </Link>
           </div>
-          <div>
+          <div className="py-5 px-3">
+            <Link
+              href="/services"
+              className="font-medium text-xl text-secondary hover:text-primary transition-colors
+              duration-300 ease-in-out"
+            >
+              Casos de uso
+            </Link>
+          </div>
+          <div className="py-5 px-3">
+            <Link
+              href="/services"
+              className="font-medium text-xl text-secondary hover:text-primary transition-colors
+              duration-300 ease-in-out"
+            >
+              Contacto
+            </Link>
+          </div>
+          <div className="py-5 px-3">
+            <Link
+              href="/services"
+              className="font-medium text-xl text-secondary hover:text-primary transition-colors
+              duration-300 ease-in-out"
+            >
+              Recursos
+            </Link>
+          </div>
+          <div className="py-5 px-3">
+            <Link href={`/quote/create`}>
+              <Button>Agendar consulta</Button>
+            </Link>
+          </div>
+          <div className="py-5 px-3">
             {user && <UserButton user={user} />}
             {!user && session.status !== "loading" && <SignInButton />}
           </div>
