@@ -15,6 +15,7 @@ import UserButton from "./UserButton";
 
 import Image from "next/image";
 import React from "react";
+import { Separator } from "./ui/separator";
 
 const navbarLinks = [
   {
@@ -26,6 +27,28 @@ const navbarLinks = [
     id: 2,
     href: "/solutions",
     label: "Soluciones IA",
+    submenus: [
+      {
+        id: 21,
+        href: "/solutions",
+        label: "Chatbots",
+      },
+      {
+        id: 22,
+        href: "/solutions",
+        label: "Automatización de procesos",
+      },
+      {
+        id: 23,
+        href: "/solutions",
+        label: "Análisis de sentimientos",
+      },
+      {
+        id: 24,
+        href: "/solutions",
+        label: "Campañas de marketing personalizadas",
+      },
+    ],
   },
   {
     id: 3,
@@ -52,6 +75,7 @@ const navbarLinks = [
 export default function MobileNav() {
   const session = useSession();
   const user = session.data?.user;
+
   return (
     <div className="md:hidden flex flex-col-2 justify-between w-full">
       <div className="mt-4 flex justify-center">
@@ -110,19 +134,35 @@ const NavBar = (props: NavBarProps) => {
   return (
     <nav>
       {navbarLinks.map((item) => (
-        <SheetCloseWrapper {...sheetCloseWrapperProps} key={item.id}>
-          <Link
-            key={item.id}
-            href={item.href}
-            className={`block py-2 text-center ${
-              isActive(item.href)
-                ? "text-primary font-extrabold"
-                : "text-gray-700"
-            }`}
-          >
-            {item.label}
-          </Link>
-        </SheetCloseWrapper>
+        <div key={item.id}>
+          <SheetCloseWrapper {...sheetCloseWrapperProps}>
+            <Link
+              href={item.href}
+              className={`block py-2 text-center ${
+                isActive(item.href)
+                  ? "text-primary font-extrabold"
+                  : "text-gray-700"
+              }`}
+            >
+              {item.label}
+            </Link>
+          </SheetCloseWrapper>
+          {item.submenus && (
+            <div className="pl-4">
+              {item.submenus.map((submenu) => (
+                <SheetCloseWrapper {...sheetCloseWrapperProps} key={submenu.id}>
+                  <Link
+                    href={submenu.href}
+                    className="block py-2 text-left text-gray-700"
+                  >
+                    {submenu.label}
+                    <Separator />
+                  </Link>
+                </SheetCloseWrapper>
+              ))}
+            </div>
+          )}
+        </div>
       ))}
     </nav>
   );
