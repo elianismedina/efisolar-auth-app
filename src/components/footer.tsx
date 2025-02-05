@@ -5,11 +5,8 @@ import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 import Image from "next/image";
+import DropdownSolutions from "./dropdown-solutions";
 const footerLinks = [
-  {
-    title: "Soluciones IA",
-    href: "/solutions",
-  },
   {
     title: "Recursos",
     href: "/resources",
@@ -46,6 +43,7 @@ const Footer = () => {
                 height={150}
               />
               <ul className="mt-6 flex items-center gap-4 flex-wrap">
+                <DropdownSolutions />
                 {footerLinks.map(({ title, href }) => (
                   <li key={title}>
                     <Link
