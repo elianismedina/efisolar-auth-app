@@ -36,12 +36,14 @@ const Footer = () => {
           <div className="py-12 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6 xl:px-0">
             <div>
               {/* Logo */}
-              <Image
-                src="/images/QuimbaIA.png"
-                alt="QuimbaIA"
-                width={150}
-                height={150}
-              />
+              <Link href="/" className="flex items-center gap-2">
+                <Image
+                  src="/images/QuimbaIA.png"
+                  alt="QuimbaIA"
+                  width={150}
+                  height={150}
+                />
+              </Link>
               <ul className="mt-6 flex items-center gap-4 flex-wrap">
                 <DropdownSolutions />
                 {footerLinks.map(({ title, href }) => (

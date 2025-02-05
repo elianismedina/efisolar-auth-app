@@ -15,8 +15,8 @@ export default function Home() {
           y escalarlas sin empleados adicionales. <br /> No requiere
           conocimientos técnicos-Nosotros nos enacargamos de todo. <br /> Lidera
           el cambio, aumenta la productividad y deja que la{" "}
-          <span className="font-semibold">automatización</span>
-          impulse tu crecimiento.
+          <span className="font-semibold">automatización</span> impulse tu
+          crecimiento.
         </p>
         <div className="flex flex-row gap-4">
           <Button className="mt-6">Comenzar ahora</Button>
