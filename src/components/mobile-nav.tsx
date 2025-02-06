@@ -81,10 +81,10 @@ export default function MobileNav() {
       <div className="mt-4 flex justify-center">
         <Link href="/">
           <Image
-            src="/images/QuimbaIA.png"
-            alt="QuimbaIA"
-            width={100}
-            height={100}
+            src="/images/KimbaIA.png"
+            alt="KimbaIA"
+            width={150}
+            height={150}
             className="mb-6 mt-4"
           />
         </Link>
