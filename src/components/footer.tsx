@@ -30,7 +30,7 @@ const footerLinks = [
 ];
 const Footer = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-r from-neutral-300 to-stone-400">
+    <div className="min-h-screen flex flex-col bg-white border-t">
       <footer>
         <div className="max-w-screen-xl mx-auto">
           <div className="py-12 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6 xl:px-0">

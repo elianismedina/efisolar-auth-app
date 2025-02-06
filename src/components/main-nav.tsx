@@ -6,6 +6,28 @@ import UserButton from "./UserButton";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import DropdownSolutions from "./dropdown-solutions";
+import React from "react";
+
+interface MyButtonProps {
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  href?: string;
+}
+const MyButton: React.ForwardRefRenderFunction<
+  HTMLAnchorElement,
+  MyButtonProps
+> = ({ onClick, href }, ref) => {
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      ref={ref}
+      className="font-medium text-md text-white bg-primary hover:bg-secondary transition-colors duration-300 ease-in-out py-3 px-2 rounded-lg"
+    >
+      Agendar consulta
+    </a>
+  );
+};
+const ForwardedMyButton = React.forwardRef(MyButton);
 
 export default function MainNav() {
   const session = useSession();
@@ -57,8 +79,8 @@ export default function MainNav() {
             </Link>
           </div>
           <div className="py-5 px-3">
-            <Link href={`/quote/create`}>
-              <Button>Agendar consulta</Button>
+            <Link href={`/quote/create`} passHref legacyBehavior>
+              <ForwardedMyButton />
             </Link>
           </div>
           <div className="py-5 px-3">
