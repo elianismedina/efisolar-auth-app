@@ -38,7 +38,7 @@ const Footer = () => {
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src="/images/QuimbaIA.png"
+                  src="/images/KimbaIA.png"
                   alt="QuimbaIA"
                   width={150}
                   height={150}
@@ -75,7 +75,7 @@ const Footer = () => {
             <span className="text-secondary">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
-                QuimbaIA
+                KimbaIA
               </Link>
               . Todos los derechos reservados.
             </span>

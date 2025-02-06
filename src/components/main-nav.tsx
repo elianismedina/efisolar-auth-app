@@ -18,10 +18,10 @@ export default function MainNav() {
         <div className="flex-initial">
           <Link href="/" className="flex items-start py-5 px-3">
             <Image
-              src="/images/QuimbaIA.png"
-              alt="QuimbaIA"
-              width={100}
-              height={100}
+              src="/images/KimbaIA.png"
+              alt="KimbaIA"
+              width={150}
+              height={150}
               className="mb-4 mt-4"
             />
           </Link>
