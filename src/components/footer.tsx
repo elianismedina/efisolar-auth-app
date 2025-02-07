@@ -1,11 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 import Image from "next/image";
 import DropdownSolutions from "./dropdown-solutions";
+import SubscribeForm from "./SubscribeForm";
+
 const footerLinks = [
   {
     title: "Recursos",
@@ -63,10 +63,7 @@ const Footer = () => {
               <h6 className="font-semibold text-secondary">
                 Recibe información útil sobre Inteligencia artificial
               </h6>
-              <form className="mt-6 flex items-center gap-2">
-                <Input type="email" placeholder="correo electrónico" />
-                <Button>Suscribirse</Button>
-              </form>
+              <SubscribeForm />
             </div>
           </div>
           <Separator />
