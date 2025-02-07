@@ -45,7 +45,7 @@ export default function SubscribeForm() {
       <input
         {...register("email")}
         type="email"
-        placeholder="Enter your email"
+        placeholder="Ingresa tu correo electrónico"
         className="border rounded p-2"
       />
       {errors.email && (
@@ -57,10 +57,10 @@ export default function SubscribeForm() {
       </Button>
 
       {status === "success" && (
-        <p className="text-green-500">Subscribed successfully!</p>
+        <p className="text-green-500">Gracias por suscribirte!</p>
       )}
       {status === "error" && (
-        <p className="text-red-500">Subscription failed.</p>
+        <p className="text-red-500">Subscripción fallida.</p>
       )}
     </form>
   );
