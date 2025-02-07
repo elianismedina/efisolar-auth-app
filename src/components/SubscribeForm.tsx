@@ -1,67 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "./ui/button";
 
-const SubscribeSchema = z.object({
-  email: z.string().email({ message: "Invalid email address" }),
-});
+export default function SubscribeButton() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-export default function SubscribeForm() {
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<{ email: string }>({ resolver: zodResolver(SubscribeSchema) });
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMessage("");
 
-  const onSubmit = async (data: { email: string }) => {
-    setStatus("loading");
-    try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+    const res = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
 
-      if (response.ok) {
-        setStatus("success");
-      } else {
-        throw new Error("Failed to subscribe");
-      }
-    } catch (error) {
-      console.error("Subscription error:", error);
-      setStatus("error");
+    const data = await res.json();
+    if (res.ok) {
+      setMessage("Check your inbox for a welcome email!");
+      setEmail("");
+    } else {
+      setMessage(data.error || "An error occurred.");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
-      <input
-        {...register("email")}
-        type="email"
-        placeholder="Ingresa tu correo electrónico"
-        className="border rounded p-2"
-      />
-      {errors.email && (
-        <p className="text-red-500 text-sm">{errors.email.message}</p>
-      )}
-
-      <Button type="submit" disabled={status === "loading"}>
-        {status === "loading" ? "Subscribing..." : "Subscribe"}
-      </Button>
-
-      {status === "success" && (
-        <p className="text-green-500">Gracias por suscribirte!</p>
-      )}
-      {status === "error" && (
-        <p className="text-red-500">Subscripción fallida.</p>
-      )}
-    </form>
+    <div>
+      <form onSubmit={handleSubscribe} className="space-y-4">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="border p-2 w-full"
+        />
+        <button type="submit" className="bg-black text-white p-2 w-full">
+          Subscribe
+        </button>
+      </form>
+      {message && <p>{message}</p>}
+    </div>
   );
 }

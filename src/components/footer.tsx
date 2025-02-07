@@ -4,7 +4,7 @@ import { Separator } from "./ui/separator";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 import Image from "next/image";
 import DropdownSolutions from "./dropdown-solutions";
-import SubscribeForm from "./SubscribeForm";
+import SubscribeButton from "./SubscribeForm";
 
 const footerLinks = [
   {
@@ -63,7 +63,7 @@ const Footer = () => {
               <h6 className="font-semibold text-secondary">
                 Recibe información útil sobre Inteligencia artificial
               </h6>
-              <SubscribeForm />
+              <SubscribeButton />
             </div>
           </div>
           <Separator />
