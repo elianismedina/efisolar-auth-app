@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
 
-const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL!; // Store in .env.local
+const prisma = new PrismaClient();
+const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL!;
 
 export async function POST(req: Request) {
   try {
@@ -9,7 +11,21 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
-    // Send request to n8n webhook
+    // Check if the subscriber already exists
+    const existingSubscriber = await prisma.subscriber.findUnique({
+      where: { email },
+    });
+    if (existingSubscriber) {
+      return NextResponse.json(
+        { error: "Email already subscribed" },
+        { status: 409 }
+      );
+    }
+
+    // Save subscriber in database
+    await prisma.subscriber.create({ data: { email } });
+
+    // Trigger n8n workflow
     const response = await fetch(N8N_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -18,14 +34,14 @@ export async function POST(req: Request) {
 
     if (!response.ok) {
       return NextResponse.json(
-        { error: "Failed to subscribe" },
+        { error: "Failed to trigger welcome email" },
         { status: 500 }
       );
     }
 
     return NextResponse.json(
       { message: "Subscription successful!" },
-      { status: 200 }
+      { status: 201 }
     );
   } catch (error) {
     console.log(error);
