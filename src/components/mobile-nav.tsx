@@ -12,10 +12,9 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { signIn, useSession } from "next-auth/react";
 import UserButton from "./UserButton";
-
-import Image from "next/image";
 import React from "react";
 import { Separator } from "./ui/separator";
+import Logo from "./Logo";
 
 const navbarLinks = [
   {
@@ -80,13 +79,7 @@ export default function MobileNav() {
     <div className="md:hidden flex flex-col-2 justify-between w-full">
       <div className="mt-4 flex justify-center">
         <Link href="/">
-          <Image
-            src="/images/KimbaIA.png"
-            alt="KimbaIA"
-            width={150}
-            height={150}
-            className="mb-6 mt-4"
-          />
+          <Logo />
         </Link>
       </div>
       <Sheet>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "./ui/button";
 
 export default function SubscribeButton() {
   const [email, setEmail] = useState("");
@@ -18,10 +19,10 @@ export default function SubscribeButton() {
 
     const data = await res.json();
     if (res.ok) {
-      setMessage("Check your inbox for a welcome email!");
+      setMessage("Gracias por suscribirte. Recibiras un mensaje de bienvenida");
       setEmail("");
     } else {
-      setMessage(data.error || "An error occurred.");
+      setMessage(data.error || "Ocurrió un error.");
     }
   };
 
@@ -30,15 +31,15 @@ export default function SubscribeButton() {
       <form onSubmit={handleSubscribe} className="space-y-4">
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="Ingresa tu correo electrónico"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border p-2 w-full"
+          className="border p-2 w-full rounded-lg"
         />
-        <button type="submit" className="bg-black text-white p-2 w-full">
-          Subscribe
-        </button>
+        <Button type="submit" className="bg-black text-white p-2 w-full">
+          Subscribirme
+        </Button>
       </form>
       {message && <p>{message}</p>}
     </div>

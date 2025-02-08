@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 import { Separator } from "./ui/separator";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
-import Image from "next/image";
 import DropdownSolutions from "./dropdown-solutions";
 import SubscribeButton from "./SubscribeForm";
+import Logo from "./Logo";
 
 const footerLinks = [
   {
@@ -37,12 +37,7 @@ const Footer = () => {
             <div>
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2">
-                <Image
-                  src="/images/KimbaIA.png"
-                  alt="QuimbaIA"
-                  width={150}
-                  height={150}
-                />
+                <Logo />
               </Link>
               <ul className="mt-6 flex items-center gap-4 flex-wrap">
                 <DropdownSolutions />
@@ -59,9 +54,15 @@ const Footer = () => {
               </ul>
             </div>
             {/* Subscribe Newsletter */}
+            <div>
+              <p className="text-2xl text-center text-primary">
+                Suscríbete a nuestra newsletter!
+              </p>
+            </div>
             <div className="max-w-xs w-full">
-              <h6 className="font-semibold text-secondary">
-                Recibe información útil sobre Inteligencia artificial
+              <h6 className="font-semibold text-secondary mb-2">
+                Recibe información útil sobre como adoptar la Inteligencia
+                artificial en tu negocio
               </h6>
               <SubscribeButton />
             </div>

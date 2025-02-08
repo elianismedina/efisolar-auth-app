@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import UserButton from "./UserButton";
 import { signIn, useSession } from "next-auth/react";
-import Image from "next/image";
 import DropdownSolutions from "./dropdown-solutions";
 import React from "react";
+import Logo from "./Logo";
 
 interface MyButtonProps {
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
@@ -38,14 +38,8 @@ export default function MainNav() {
       <nav className="flex justify-between">
         {/* Logo */}
         <div className="flex-initial">
-          <Link href="/" className="flex items-start py-5 px-3">
-            <Image
-              src="/images/KimbaIA.png"
-              alt="KimbaIA"
-              width={150}
-              height={150}
-              className="mb-4 mt-4"
-            />
+          <Link href="/" className="flex items-start px-3 mt-2">
+            <Logo />
           </Link>
         </div>
         {/* Links */}
